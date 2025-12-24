@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dapur Mba Indah - Masakan Rumahan Lezat</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+      :root {
+        --primary-green: #4e7f2c;
+        --accent-yellow: #f9cc34;
+        --soft-white: #f8fafc;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background: linear-gradient(125deg, #4e7f2c, #f9cc34, #ffffff, #6faa44);
+        background-size: 400% 400%;
+        animation: meshGradient 15s ease infinite;
+        background-attachment: fixed;
+      }
+
+      @keyframes meshGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(15px);
+        border-bottom: 3px solid var(--primary-green);
+      }
+
+      .hero-box,
+      .how-to-box {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 30px;
+        padding: 40px;
+      }
+
+      .card-menu {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: none;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .card-menu img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-menu:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .price-tag {
+        background: var(--accent-yellow);
+        color: var(--primary-green);
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 0.85rem;
+      }
+
+      .step-number {
+        background: var(--primary-green);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-weight: bold;
+      }
+
+      .map-frame {
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        max-width: 650px;
+        margin: auto;
+        border: 8px solid white;
+      }
+
+      .wa-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      h1,
+      h2,
+      h3,
+      h5 {
+        color: var(--primary-green);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top glass-nav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center font-bold" href="#">
+          <img
+            src="assets/logo.png"
+            width="45"
+            height="45"
+            class="me-2 rounded-circle border-2 border-green-700"
+            alt="Logo"
+          />
+          <span class="text-green-800 tracking-tighter">DAPUR MBA INDAH</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto font-semibold">
+            <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cara-pesan">Cara Pesan</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lokasi">Lokasi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="container py-16 reveal">
+      <div class="hero-box text-center shadow-sm">
+        <img
+          src="assets/logo.png"
+          width="120"
+          class="mx-auto mb-4 rounded-full shadow-lg border-4 border-white reveal"
+          alt="Logo"
+        />
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-3">
+          Masakan Rumahan <br /><span class="text-yellow-500">Penuh Cinta</span>
+        </h1>
+        <p class="text-gray-700 text-lg max-w-lg mx-auto mb-6">
+          Nikmati kelezatan bumbu rempah pilihan di setiap gigitan. Lezat,
+          Higienis, dan Pas di Kantong.
+        </p>
+        <a
+          href="#menu"
+          class="btn bg-[#4e7f2c] text-white px-5 py-3 rounded-pill shadow-lg hover:bg-[#f9cc34] hover:text-[#4e7f2c] transition font-bold"
+          >PESAN SEKARANG</a
+        >
+      </div>
+    </header>
+
+    <section id="cara-pesan" class="container py-5 reveal">
+      <div class="how-to-box text-center">
+        <h2 class="text-3xl font-bold mb-10 text-center">Cara Pemesanan 📝</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="step-number">1</div>
+            <h5 class="font-bold">Pilih Menu</h5>
+            <p class="text-gray-600">
+              Cari menu favorit Anda di daftar menu kami di bawah.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div class="step-number">2</div>
+            <h5 class="font-bold">Klik Ikon WA</h5>
+            <p class="text-gray-600">
+              Klik ikon WhatsApp pada menu untuk mengirim pesan otomatis.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div class="step-number">3</div>
+            <h5 class="font-bold">Konfirmasi & Bayar</h5>
+            <p class="text-gray-600">
+              Admin kami akan memvalidasi pesanan dan instruksi pembayaran.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="container py-5">
+      <div class="text-center mb-12 reveal">
+        <span class="text-green-700 font-bold uppercase tracking-widest"
+          >Daftar Menu</span
+        >
+        <h2 class="text-4xl font-bold mt-2">Menu Spesial Kami</h2>
+        <div class="h-1 w-20 bg-yellow-400 mx-auto mt-3 rounded-full"></div>
+      </div>
+
+      <div class="row g-4 items-stretch">
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/ayam geprek.jpg" alt="Ayam Geprek" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold text-base md:text-lg">Ayam Geprek</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 13.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Ayam%20Geprek"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/ayam bakar.jpg" alt="Ayam Bakar" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Ayam Bakar</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 13.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Ayam%20Bakar"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/ayam kipas.jpg" alt="Ayam Kipas" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Ayam Kipas</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 13.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Ayam%20Kipas"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/ayam penyet.jpg" alt="Ayam Penyet" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Ayam Penyet</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 15.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Ayam%20Penyet"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/nasi kotak.jpeg" alt="Nasi Kotak" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Nasi Kotak</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 20.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Nasi%20Kotak"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/ikan lele.jpg" alt="Lele Goreng" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Lele Goreng</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 13.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Lele%20Goreng"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/nila bakar.jpg" alt="Nila Bakar" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Nila Bakar</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 13.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Nila%20Bakar"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/tumpeng.jpg" alt="Tumpeng" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Tumpeng</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 150.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Tumpeng"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3 reveal mb-4">
+          <div class="card card-menu shadow-sm">
+            <img src="assets/nasi kuning.jpg" alt="Nasi Kuning" />
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="font-bold">Nasi Kuning</h5>
+              <div class="flex justify-between items-center mt-2">
+                <span class="price-tag">Rp 150.000</span>
+                <a
+                  href="https://wa.me/6281379502243?text=Hai%20Dapur%20Mba%20Indah%20saya%20ingin%20pesan%20Tumpeng"
+                  class="text-green-600"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="container py-20 reveal">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold">Lokasi Kami 📍</h2>
+        <p class="text-gray-600">
+          Silakan kunjungi kami atau pesan untuk pengantaran.
+        </p>
+      </div>
+      <div class="map-frame">
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1501.0597170160152!2d104.54611312335577!3d-4.895264089915059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e389d001784730d%3A0x104101c8797b69d5!2sMahad%20Khalid%20Bin%20walid!5e1!3m2!1sid!2sid!4v1766555349330!5m2!1sid!2sid"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white py-12 text-center mt-10 shadow-inner">
+      <div class="container">
+        <img
+          src="assets/logo.png"
+          width="70"
+          class="mx-auto mb-4 rounded-full"
+          alt="Logo"
+        />
+        <h4 class="font-bold text-green-800 mb-4">DAPUR MBA INDAH</h4>
+        <div class="flex justify-center gap-4">
+          <a
+            href="#"
+            class="text-green-700 hover:text-yellow-500 text-2xl transition"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="#"
+            class="text-green-700 hover:text-yellow-500 text-2xl transition"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://wa.me/6281379502243"
+            class="text-green-700 hover:text-yellow-500 text-2xl transition"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+        <hr class="my-8 opacity-10" />
+        <p class="text-xs text-gray-400">
+          © 2025 Dapur Mba Indah. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/6281379502243?text=Halo%20Dapur%20Mba%20Indah,%20saya%20ingin%20tanya-tanya."
+      class="wa-float"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      ScrollReveal().reveal(".reveal", {
+        delay: 150,
+        distance: "40px",
+        duration: 800,
+        easing: "ease-out",
+        interval: 80,
+        origin: "bottom",
+      });
+    </script>
+  </body>
+</html>
